@@ -9,4 +9,13 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+    public function __construct()
+    {
+        // Any initialization needed
+    }
+
+    protected function renderInertia(string $view, array $props = [])
+    {
+        return Inertia::render($view, $props);
+    }
 }
